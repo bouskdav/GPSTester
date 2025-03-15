@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Asv.Gnss" Version="1.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Ghostware.GPS.NET\Ghostware.GPS.NET.csproj" />
   </ItemGroup>
 
