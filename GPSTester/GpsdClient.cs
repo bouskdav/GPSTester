@@ -18,6 +18,24 @@ namespace GPSTester
             StopGpsd();
         }
 
+        public void Run()
+        {
+            var gpsdIsRunning = CheckGpsdRunning();
+
+            if (!gpsdIsRunning)
+            {
+                StartGpsd();
+            }
+
+            using TcpClient client = new TcpClient();
+            client.Connect(Host, Port);
+            using NetworkStream stream = client.GetStream();
+            using StreamWriter writer = new StreamWriter(stream, Encoding.ASCII) { AutoFlush = true };
+            using StreamReader reader = new StreamReader(stream, Encoding.ASCII);
+
+            writer.WriteLine("?WATCH={\"enable\":true,\"json\":true}");
+        }
+
         public async Task RunAsync()
         {
             try

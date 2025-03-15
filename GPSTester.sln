@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GPSTester", "GPSTester\GPSTester.csproj", "{2D892FA8-5A7B-49D5-B4F3-0BE9D1E7E26A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ghostware.NMEAParser", "Ghostware.NMEAParser\Ghostware.NMEAParser.csproj", "{07A8D410-DF6C-43D0-9736-4EDD3E111D04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ghostware.GPS.NET", "Ghostware.GPS.NET\Ghostware.GPS.NET.csproj", "{CFBDB710-C75D-4DDF-94D2-8855FA6F9F07}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{2D892FA8-5A7B-49D5-B4F3-0BE9D1E7E26A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D892FA8-5A7B-49D5-B4F3-0BE9D1E7E26A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D892FA8-5A7B-49D5-B4F3-0BE9D1E7E26A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07A8D410-DF6C-43D0-9736-4EDD3E111D04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07A8D410-DF6C-43D0-9736-4EDD3E111D04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07A8D410-DF6C-43D0-9736-4EDD3E111D04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07A8D410-DF6C-43D0-9736-4EDD3E111D04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFBDB710-C75D-4DDF-94D2-8855FA6F9F07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFBDB710-C75D-4DDF-94D2-8855FA6F9F07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFBDB710-C75D-4DDF-94D2-8855FA6F9F07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFBDB710-C75D-4DDF-94D2-8855FA6F9F07}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

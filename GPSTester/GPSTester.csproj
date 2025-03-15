@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Ghostware.GPS.NET\Ghostware.GPS.NET.csproj" />
+  </ItemGroup>
+
 </Project>
