@@ -6,11 +6,16 @@ namespace GPSTester
 {
     internal class Program
     {
-        private static GpsService _gpsService;
+        private static GpsService? _gpsService;
 
-        static async Task Main(string[] args)
+        static void Main(string[] args)
         {
             Console.WriteLine("GPSTester");
+
+            var gpsdClient = new GpsdClient();
+
+            if (!gpsdClient.CheckGpsdRunning())
+                gpsdClient.StartGpsd();
 
             var info = new GpsdInfo()
             {
@@ -27,18 +32,24 @@ namespace GPSTester
             _gpsService.RegisterDataEvent(GpsdServiceOnLocationChanged);
             _gpsService.Connect();
 
-            using var gpsdClient = new GpsdClient();
-
             while (true)
             {
-                string input = Console.ReadLine();
+                string? input = Console.ReadLine();
 
-                if (input == "start")
-                    await gpsdClient.RunAsync();
+                if (String.IsNullOrEmpty(input))
+                    continue;
+
+                //if (input == "start")
+                //    await gpsdClient.RunAsync();
+
+                //if (input == "start")
+                //    await gpsdClient.RunAsync();
 
                 if (input == "exit")
                     break;
             }
+
+            gpsdClient.StopGpsd();
         }
 
         private static void GpsdServiceOnLocationChanged(object sender, GpsDataEventArgs e)
