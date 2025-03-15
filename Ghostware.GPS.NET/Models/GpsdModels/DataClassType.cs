@@ -16,6 +16,7 @@ namespace Ghostware.GPS.NET.Models.GpsdModels
             {"TPV", typeof(GpsLocation)},
             {"SKY", typeof(GpsSky)},
             {"RAW", typeof(GpsRaw)},
+            {"SUBFRAME", typeof(GpsRaw)},
         };
 
         [DataMember(Name = "class")]
