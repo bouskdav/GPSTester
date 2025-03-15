@@ -52,6 +52,9 @@ namespace GPSTester
                 Console.WriteLine(i);
             });
 
+            Console.WriteLine($"Getting CFG3 mode:");
+            Console.WriteLine(await device.GetCfgTMode3());
+
             while (true)
             {
                 string? input = Console.ReadLine();
