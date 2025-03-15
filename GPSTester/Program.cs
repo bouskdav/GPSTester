@@ -45,13 +45,15 @@ namespace GPSTester
             Console.WriteLine($"Connecting to UBX:");
 
             var device = new UbxDevice($"serial:{portName}?br={baudRate}");
+
             await device.SetupByDefault();
+
             //await device.SetMessageRate<RtcmV3Message1004>();
             //await device.SetSurveyInMode(minDuration: 60, positionAccuracyLimit: 5);
             //device.Connection.Filter<RtcmV3Msm4>().Subscribe(_ => { /* do something with RTCM */ });
             device.Connection.Filter<RtcmV3Msm4>().Subscribe(i =>
             {
-                Console.WriteLine(i);
+                Console.WriteLine($"{i.MessageId} - {i.Name}");
             });
 
             Console.WriteLine($"Getting CFG3 mode:");
