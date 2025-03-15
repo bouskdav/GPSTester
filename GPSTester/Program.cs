@@ -2,7 +2,7 @@
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             Console.WriteLine("GPSTester");
 
@@ -13,7 +13,7 @@
                 string input = Console.ReadLine();
 
                 if (input == "start")
-                    gpsdClient.RunAsync();
+                    await gpsdClient.RunAsync();
 
                 if (input == "exit")
                     break;
