@@ -55,6 +55,10 @@ namespace GPSTester
             {
                 Console.WriteLine($"{i.MessageId} - {i.Name}");
             });
+            //device.Connection.Filter<UbxAckBase>().Subscribe(i =>
+            //{
+            //    Console.WriteLine($"{i.MessageId} - {i.Name}");
+            //});
 
             Console.WriteLine($"Getting CFG3 mode:");
             Console.WriteLine(await device.GetCfgTMode3());
