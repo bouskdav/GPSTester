@@ -15,32 +15,34 @@ namespace GPSTester
 
             var gpsdClient = new GpsdClient();
 
-            if (!gpsdClient.CheckGpsdRunning())
-            {
-                Console.WriteLine("starting gpsd...");
+            //if (!gpsdClient.CheckGpsdRunning())
+            //{
+            //    Console.WriteLine("starting gpsd...");
 
-                gpsdClient.StartGpsd();
+            //    gpsdClient.StartGpsd();
 
-                Console.WriteLine("started gpsd!");
-            }
-            else
-            {
-                Console.WriteLine("gpsd already running");
-            }
+            //    Console.WriteLine("started gpsd!");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("gpsd already running");
+            //}
 
-            var info = new GpsdInfo()
-            {
-                Address = "127.0.0.1",
-                Port = 2947,
-                IsProxyEnabled = false,
-            };
-            _gpsService = new GpsService(info);
+            //var info = new GpsdInfo()
+            //{
+            //    Address = "127.0.0.1",
+            //    Port = 2947,
+            //    IsProxyEnabled = false,
+            //};
+            //_gpsService = new GpsService(info);
 
-            _gpsService.RegisterDataEvent(GpsdServiceOnLocationChanged);
-            _gpsService.Connect();
+            //_gpsService.RegisterDataEvent(GpsdServiceOnLocationChanged);
+            //_gpsService.Connect();
 
             string portName = "/dev/ttyACM0";  // Change this to match your device
             int baudRate = 115200; // Default for ZED-F9P
+
+            Console.WriteLine($"Connecting to UBX:");
 
             var device = new UbxDevice($"serial:{portName}?br={baudRate}");
             await device.SetupByDefault();
