@@ -54,7 +54,7 @@ namespace GPSTester
 
         private static void GpsdServiceOnLocationChanged(object sender, GpsDataEventArgs e)
         {
-            Console.WriteLine(e.ToString());
+            Console.WriteLine(e.Location.ToString());
         }
     }
 }

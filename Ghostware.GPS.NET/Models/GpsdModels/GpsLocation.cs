@@ -27,6 +27,15 @@ namespace Ghostware.GPS.NET.Models.GpsdModels
         [DataMember(Name = "lon")]
         public double Longitude { get; set; }
 
+        [DataMember(Name = "alt")]
+        public float Alt { get; set; }
+
+        [DataMember(Name = "altHAE")]
+        public float AltHae { get; set; }
+
+        [DataMember(Name = "altMSL")]
+        public float AltMsl { get; set; }
+
         [DataMember(Name = "track")]
         public float Track { get; set; }
 
@@ -34,6 +43,15 @@ namespace Ghostware.GPS.NET.Models.GpsdModels
         public float SpeedKnots { get; set; }
 
         public double Speed => SpeedKnots * 1.852;
+
+        [DataMember(Name = "epx")]
+        public float EstimatedXError { get; set; }
+
+        [DataMember(Name = "epy")]
+        public float EstimatedYError { get; set; }
+
+        [DataMember(Name = "epv")]
+        public float EstimatedVError { get; set; }
 
         public override string ToString()
         {

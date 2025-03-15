@@ -13,12 +13,16 @@ namespace Ghostware.GPS.NET.Models.Events
         public double Longitude { get; set; }
 
         public double Speed { get; set; }
+
+        public GpsLocation Location { get; set; }
        
         public GpsDataEventArgs(GpsLocation gpsLocation)
         {
             Latitude = gpsLocation.Latitude;
             Longitude = gpsLocation.Longitude;
             Speed = gpsLocation.Speed;
+
+            Location = gpsLocation;
         }
 
         public GpsDataEventArgs(GprmcMessage gpsLocation)
