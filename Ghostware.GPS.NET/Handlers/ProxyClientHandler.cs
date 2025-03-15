@@ -20,7 +20,9 @@ namespace Ghostware.GPS.NET.Handlers
             };
 
             var proxyUri = uriBuilder.Uri;
+#pragma warning disable SYSLIB0014 // Type or member is obsolete
             var request = WebRequest.Create("http://" + data.Address + ":" + data.Port);
+#pragma warning restore SYSLIB0014 // Type or member is obsolete
             var webProxy = new WebProxy(proxyUri);
 
             request.Proxy = webProxy;
